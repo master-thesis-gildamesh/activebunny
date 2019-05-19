@@ -1,0 +1,2 @@
+class <%= class_name %>Subscriber < ActiveBunny::Subscriber
+end
