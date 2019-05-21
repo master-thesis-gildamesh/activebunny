@@ -4,6 +4,7 @@ require 'bunny'
 module ActiveBunny
   extend ActiveSupport::Autoload
 
+  autoload :YAMLSource
   autoload :Publisher
   autoload :Subscriber
 
@@ -14,7 +15,7 @@ module ActiveBunny
   @@queues = {}
 
   def self.load_config(config_file)
-    self.config = YAML.load(ERB.new(IO.read(config_file))).deep_symbolize_keys[Rails.env.to_sym]
+    self.config = YAMLSource.new(config_file).load
   end
 
   def self.config
