@@ -52,8 +52,14 @@ module ActiveBunny
     (method_list.map(&:to_sym) - queues.keys).each do |m|
       queues[m] = channel(name).queue("#{Rails.application.class.name.deconstantize}.#{simple_name}.#{m}", durable: true, auto_delete: true)
       queues[m].bind("#{simple_name}.#{m}")
-      queues[m].subscribe do |delivery_info, properties, payload|
-        name.constantize.new.send(m, payload)
+      queues[m].subscribe(manual_ack: true) do |delivery_info, properties, payload|
+        obj = name.constantize.new
+        obj.send(m, payload)
+        if obj.send(:ack?)
+          self.channel(name).ack(delivery_info.delivery_tag, false)
+        else
+          self.channel(name).nack(delivery_info.delivery_tag, false, obj.send(:requeue?))
+        end
       end
     end
   end
