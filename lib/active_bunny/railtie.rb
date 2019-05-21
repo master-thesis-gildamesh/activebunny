@@ -10,7 +10,7 @@ module Rails
 
       initializer "activebunny.load-config" do
         if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
-          config.active_bunny.config = YAML.load_file("#{Rails.root}/config/rabbitmq.yml").deep_symbolize_keys[Rails.env.to_sym]
+          config.active_bunny.load_config("#{Rails.root}/config/rabbitmq.yml")
         end
       end
 
