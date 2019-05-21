@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc3eca04-0ab8-49bd-a4f7-8dad56ceb7fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/activebunny.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/activebunny.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/active_bunny.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/active_bunny.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/active_bunny/subscriber.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/active_bunny/subscriber.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dummy/app/publishers/user_publisher.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/dummy/app/publishers/user_publisher.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/test/dummy/app/publishers/user_publisher.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -29,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/lib/active_bunny/active_record/hooks.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -38,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/lib/active_bunny/publisher.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -52,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/active_bunny/subscriber.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="210">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -70,20 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/active_bunny.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bunny-2.14.2/lib/bunny/channel.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="496" column="8" selection-start-line="496" selection-start-column="8" selection-end-line="496" selection-end-column="8" />
+            <state relative-caret-position="345">
+              <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -143,8 +131,8 @@
         <option value="$PROJECT_DIR$/lib/generators/active_bunny/subscriber_generator.rb" />
         <option value="$PROJECT_DIR$/lib/active_bunny/basics.rb" />
         <option value="$PROJECT_DIR$/test/dummy/app/publishers/user_publisher.rb" />
-        <option value="$PROJECT_DIR$/lib/active_bunny.rb" />
         <option value="$PROJECT_DIR$/lib/active_bunny/subscriber.rb" />
+        <option value="$PROJECT_DIR$/lib/active_bunny.rb" />
       </list>
     </option>
   </component>
@@ -394,7 +382,8 @@
       <workItem from="1558254536042" duration="24088000" />
       <workItem from="1558334071702" duration="521000" />
       <workItem from="1558337522445" duration="3232000" />
-      <workItem from="1558424194898" duration="2857000" />
+      <workItem from="1558424194898" duration="3192000" />
+      <workItem from="1558437165178" duration="156000" />
     </task>
     <servers />
   </component>
@@ -431,13 +420,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56496000" />
+    <option name="totallyTimeSpent" value="56987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17199148" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17358893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -450,7 +439,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.16756175" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42320085" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.47798067" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -706,24 +695,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs26/module.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="336" column="8" selection-start-line="336" selection-start-column="8" selection-end-line="336" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bunny-2.14.2/lib/bunny/channel.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="496" column="8" selection-start-line="496" selection-start-column="8" selection-end-line="496" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/dummy/app/publishers/user_publisher.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/active_bunny/active_record/hooks.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/active_bunny/publisher.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -734,10 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs26/module.rb">
+    <entry file="file://$PROJECT_DIR$/lib/active_bunny/subscriber.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="336" column="8" selection-start-line="336" selection-start-column="8" selection-end-line="336" selection-end-column="8" />
+        <state relative-caret-position="210">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -750,22 +753,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/active_bunny.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bunny-2.14.2/lib/bunny/channel.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="496" column="8" selection-start-line="496" selection-start-column="8" selection-end-line="496" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/active_bunny/subscriber.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        <state relative-caret-position="345">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
         </state>
       </provider>
     </entry>

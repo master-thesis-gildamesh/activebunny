@@ -91,7 +91,7 @@ module ActiveBunny
 
 
   at_exit do
-    @@conn.close
+    @@conn.close if @@conn
   end
 end
 
