@@ -13,7 +13,7 @@ module ActiveBunny
   @@fanouts = {}
   @@queues = {}
 
-  def self.load_config(file)
+  def self.load_config(config_file)
     self.config = YAML.load(ERB.new(IO.read(config_file))).deep_symbolize_keys[Rails.env.to_sym]
   end
 
