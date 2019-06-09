@@ -11,8 +11,10 @@ module ActiveBunny
 
     private
     def reload_subscriber
-      ActiveBunny.channel(self.name)
-      ActiveBunny.create_queues(self.name, class_name, method_list(ActiveBunny::Subscriber))
+      if Rails.const_defined? 'Server'
+        ActiveBunny.channel(self.name)
+        ActiveBunny.create_queues(self.name, class_name, method_list(ActiveBunny::Subscriber))
+      end
     end
 
     def reload_publisher

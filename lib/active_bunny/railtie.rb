@@ -6,42 +6,45 @@ module Rails
   module ActiveBunny
     class Railtie < Rails::Railtie
 
-      config.active_bunny = ::ActiveBunny
+      if Rails.const_defined? 'Console' or Rails.const_defined? 'Server'
 
-      initializer "activebunny.load-config" do
-        if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
-          config.active_bunny.load_config("#{Rails.root}/config/rabbitmq.yml")
-        end
-      end
+        config.active_bunny = ::ActiveBunny
 
-      initializer "activebunny.file_watcher" do |app|
-        if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
-          app.reloaders << ActiveSupport::FileUpdateChecker.new([], { "app/subscribers" => [".rb"], "app/publishers" => [".rb"] }) do
-            puts "Active Bunny reloading..."
+        initializer "activebunny.load-config" do
+          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+            config.active_bunny.load_config("#{Rails.root}/config/rabbitmq.yml")
           end
         end
-      end
 
-      initializer "activebunny.connect_to_rabbitmq" do |app|
-        if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
-          config.active_bunny.connection
+        initializer "activebunny.file_watcher" do |app|
+          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+            app.reloaders << ActiveSupport::FileUpdateChecker.new([], { "app/subscribers" => [".rb"], "app/publishers" => [".rb"] }) do
+              puts "Active Bunny reloading..."
+            end
+          end
         end
-      end
 
-      ActiveSupport::Reloader.to_prepare do
-        Railtie.load_stuff
-        ::ActiveBunny::Publisher.descendants.each do |child|
-          child.send(:reload)
+        initializer "activebunny.connect_to_rabbitmq" do |app|
+          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+            config.active_bunny.connection
+          end
         end
-        ::ActiveBunny::Subscriber.descendants.each do |child|
-          child.send(:reload)
-        end
-      end
 
-      def self.load_stuff
-        if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
-          Dir.glob(File.join(Rails.root, 'app', 'publishers', '**', '*.rb'), &method(:require_dependency))
-          Dir.glob(File.join(Rails.root, 'app', 'subscribers', '**', '*.rb'), &method(:require_dependency))
+        ActiveSupport::Reloader.to_prepare do
+          Railtie.load_stuff
+          ::ActiveBunny::Publisher.descendants.each do |child|
+            child.send(:reload)
+          end
+          ::ActiveBunny::Subscriber.descendants.each do |child|
+            child.send(:reload)
+          end
+        end
+
+        def self.load_stuff
+          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+            Dir.glob(File.join(Rails.root, 'app', 'publishers', '**', '*.rb'), &method(:require_dependency))
+            Dir.glob(File.join(Rails.root, 'app', 'subscribers', '**', '*.rb'), &method(:require_dependency))
+          end
         end
       end
     end
