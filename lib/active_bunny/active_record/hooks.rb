@@ -3,6 +3,7 @@ module ActiveBunny
     module Hooks
 
       def create_model_hooks(except:[], only:nil)
+        return unless File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
         hooks = (only || [:after_create, :after_update, :after_destroy]) - except
         caller_class = self
         model_name = self.send(:class_name)
