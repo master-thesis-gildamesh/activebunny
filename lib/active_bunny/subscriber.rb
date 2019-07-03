@@ -1,5 +1,5 @@
 require_relative 'basics'
-require_relative 'active_record/hooks'
+require_relative 'active_model/hooks'
 
 module ActiveBunny
   class Subscriber

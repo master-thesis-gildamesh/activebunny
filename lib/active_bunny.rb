@@ -14,6 +14,14 @@ module ActiveBunny
   @@fanouts = {}
   @@queues = {}
 
+  def self.run?
+    file = File.join(Rails.root, 'config', 'rabbitmq.yml')
+    return false unless File.exists?(file)
+
+    self.load_config(file)
+    self.config[:enabled]
+  end
+
   def self.load_config(config_file)
     self.config = YAMLSource.new(config_file).load
   end
@@ -24,6 +32,7 @@ module ActiveBunny
 
   def self.config= (config)
     @@config = {
+        enabled: false,
         logger: Rails.logger,
         auth_mechanism: "plain",
         username: "guest",

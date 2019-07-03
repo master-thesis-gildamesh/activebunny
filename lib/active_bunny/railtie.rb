@@ -11,13 +11,13 @@ module Rails
         config.active_bunny = ::ActiveBunny
 
         initializer "activebunny.load-config" do
-          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+          if config.active_bunny.run?
             config.active_bunny.load_config("#{Rails.root}/config/rabbitmq.yml")
           end
         end
 
         initializer "activebunny.file_watcher" do |app|
-          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+          if config.active_bunny.run?
             app.reloaders << ActiveSupport::FileUpdateChecker.new([], { "app/subscribers" => [".rb"], "app/publishers" => [".rb"] }) do
               puts "Active Bunny reloading..."
             end
@@ -25,7 +25,7 @@ module Rails
         end
 
         initializer "activebunny.connect_to_rabbitmq" do |app|
-          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+          if config.active_bunny.run?
             config.active_bunny.connection
           end
         end
@@ -41,7 +41,7 @@ module Rails
         end
 
         def self.load_stuff
-          if File.exists?(File.join(Rails.root, 'config', 'rabbitmq.yml'))
+          if config.active_bunny.run?
             Dir.glob(File.join(Rails.root, 'app', 'publishers', '**', '*.rb'), &method(:require_dependency))
             Dir.glob(File.join(Rails.root, 'app', 'subscribers', '**', '*.rb'), &method(:require_dependency))
           end

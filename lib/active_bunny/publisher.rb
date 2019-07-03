@@ -1,11 +1,11 @@
 require_relative 'basics'
-require_relative 'active_record/hooks'
+require_relative 'active_model/hooks'
 
 module ActiveBunny
   class Publisher
     extend ActiveSupport::DescendantsTracker
     extend ::ActiveBunny::Basics
-    extend ::ActiveBunny::ActiveRecord::Hooks
+    extend ::ActiveBunny::ActiveModel::Hooks
 
     def publish(obj, method=nil)
       method ||= caller_locations(1,1)[0].label
